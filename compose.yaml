@@ -1,0 +1,41 @@
+services:
+  aas-environment:
+    image: eclipsebasyx/aas-environment:2.0.0-SNAPSHOT
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./aas:/application/aas
+      - ./config/aas-environment.yml:/application/application.yml
+    depends_on:
+      aas-registry:
+        condition: service_healthy
+      submodel-registry:
+        condition: service_healthy
+
+  aas-registry:
+    image: eclipsebasyx/aas-registry-log-mem:2.0.0-SNAPSHOT
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./config/aas-registry.yml:/workspace/config/application.yml
+
+  submodel-registry:
+    image: eclipsebasyx/submodel-registry-log-mem:2.0.0-SNAPSHOT
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./config/submodel-registry.yml:/workspace/config/application.yml
+
+  aas-gui:
+    image: eclipsebasyx/aas-gui:SNAPSHOT
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      AAS_REPO_PATH: "http://localhost:8081/shells"
+      SUBMODEL_REPO_PATH: "http://localhost:8081/submodels"
+      AAS_REGISTRY_PATH: "http://localhost:8082/shell-descriptors"
+      SUBMODEL_REGISTRY_PATH: "http://localhost:8083/submodel-descriptors"
+    depends_on:
+      aas-environment:
+        condition: service_healthy

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aastools"
+version = "0.1.0"
+description = "BaSyx Asset Adminstration Shell Tools"
+authors = [{ name = "Peter Stein", email = "peterstein@dfki.de" }]
+license = { file = "LICENSE" }
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic-settings",
+    "requests",
+]
+
+[project.optional-dependencies]
+test = [
+    "black",
+    "flake8",
+    "isort",
+    "pytest",
+    "pytest-cov",
+    "pytest-dotenv",
+]
+
+[project.scripts]
+aas = "aastools.__main__:main"

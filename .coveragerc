@@ -1,0 +1,14 @@
+[run]
+source =
+    src
+omit =
+    .venv
+    aas
+    config
+    tests
+    __main__.py
+    cli.py
+
+[report]
+show_missing = True
+skip_covered = False

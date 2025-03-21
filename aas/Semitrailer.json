@@ -1,0 +1,364 @@
+{
+  "assetAdministrationShells": [
+    {
+      "extensions": [
+        {
+          "name": "namespace",
+          "valueType": "xs:string",
+          "value": "product"
+        },
+        {
+          "name": "shellViewId",
+          "valueType": "xs:string",
+          "value": ""
+        }
+      ],
+      "idShort": "Semitrailer",
+      "id": "https://smartfactory.de/shells/3a4f1723-fc7d-4903-a621-d79ce9e4241c",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://smartfactory.de/assets/94bc6ec3-d310-403e-9acd-3c9d33777994",
+        "assetType": "product"
+      },
+      "submodels": [
+        {
+          "type": "ExternalReference",
+          "referredSemanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "https://smartfactory.de/semantics/submodel/ProductIdentification#1/0"
+              }
+            ]
+          },
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/c9afa701-4218-4628-b62c-40204a0f9f06"
+            }
+          ]
+        },
+        {
+          "type": "ExternalReference",
+          "referredSemanticId": {
+            "type": "ModelReference",
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "ProductionPlan"
+              },
+              {
+                "type": "Submodel",
+                "value": "ProductionSchedule"
+              },
+              {
+                "type": "Submodel",
+                "value": "https://smartfactory.de/semantics/submodel/ProductionPlan#1/0"
+              }
+            ]
+          },
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/f1f73b85-73b8-429f-b706-df9cbbd503c0"
+            }
+          ]
+        }
+      ],
+      "modelType": "AssetAdministrationShell"
+    }
+  ],
+  "submodels": [
+    {
+      "idShort": "ProductIdentification",
+      "id": "https://smartfactory.de/submodels/c9afa701-4218-4628-b62c-40204a0f9f06",
+      "kind": "Instance",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://smartfactory.de/semantics/submodel/ProductIdentification#1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "Identifier",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "valueType": "xs:string",
+          "value": "https://smartfactory.de/shells/0e2e530c-7daf-41df-b58b-bc8640620a63",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ProductName",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "valueType": "xs:string",
+          "value": "Semitrailer",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "Submodel"
+    },
+    {
+      "idShort": "ProductionPlan",
+      "id": "https://smartfactory.de/submodels/f1f73b85-73b8-429f-b706-df9cbbd503c0",
+      "kind": "Instance",
+      "semanticId": {
+        "type": "ModelReference",
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "ProductionPlan"
+          },
+          {
+            "type": "Submodel",
+            "value": "ProductionSchedule"
+          },
+          {
+            "type": "Submodel",
+            "value": "https://smartfactory.de/semantics/submodel/ProductionPlan#1/0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "Step0001",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "value": [
+            {
+              "idShort": "StepTitle",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": []
+              },
+              "valueType": "xs:string",
+              "value": "Assembly",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Status",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": []
+              },
+              "valueType": "xs:string",
+              "value": "done",
+              "modelType": "Property"
+            },
+            {
+              "idShort": "Actions",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "MachineOperationList"
+                  },
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "Actions"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Action0001",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "MachineOperation"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Action"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "FinalResultData",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "value": [
+                        {
+                          "idShort": "EndTime",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "xs:string",
+                          "value": "2024/04/25 17:19:50",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "StartTime",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "xs:string",
+                          "value": "2024/04/25 17:19:05",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "idShort": "Action0002",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "MachineOperation"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Action"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "FinalResultData",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "value": [
+                        {
+                          "idShort": "EndTime",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "xs:string",
+                          "value": "2024/04/25 17:20:12",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "StartTime",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "xs:string",
+                          "value": "2024/04/25 17:19:59",
+                          "modelType": "Property"
+                        },
+                        {
+                          "idShort": "CarrierId",
+                          "valueType": "xs:string",
+                          "value": "WST_A_5",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "Step0003",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "value": [
+            {
+              "idShort": "Actions",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "MachineOperationList"
+                  },
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "Actions"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Action0002",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "MachineOperation"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Action"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "FinalResultData",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "value": [
+                        {
+                          "idShort": "CarrierId",
+                          "valueType": "xs:string",
+                          "value": "WST_A_5",
+                          "modelType": "Property"
+                        }
+                      ],
+                      "modelType": "SubmodelElementCollection"
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "idShort": "IsFinished",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": []
+          },
+          "valueType": "xs:string",
+          "value": "true",
+          "modelType": "Property"
+        }
+      ],
+      "modelType": "Submodel"
+    }
+  ],
+  "conceptDescriptions": []
+}

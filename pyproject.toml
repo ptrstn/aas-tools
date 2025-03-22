@@ -13,6 +13,7 @@ requires-python = ">=3.9"
 dependencies = [
     "pydantic-settings",
     "requests",
+    "typer",
 ]
 
 [project.optional-dependencies]
@@ -26,4 +27,4 @@ test = [
 ]
 
 [project.scripts]
-aas = "aastools.__main__:main"
+aas = "aastools.cli.main:app"

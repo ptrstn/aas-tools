@@ -2,9 +2,9 @@ import typer
 import requests
 
 from pathlib import Path
-from aastools import __version__, services, crud
-from aastools.settings import settings
-from aastools.upload import upload_aas, upload_aas_folder
+from shellsmith import __version__, services, crud
+from shellsmith.settings import settings
+from shellsmith.upload import upload_aas, upload_aas_folder
 
 app = typer.Typer(name="aas", help="Asset Administration Shell Tools CLI")
 shell_app = typer.Typer(help="Manage Asset Administration Shells")
